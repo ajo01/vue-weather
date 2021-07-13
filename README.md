@@ -2,8 +2,8 @@
 
 Weather app in Vue
 
-![](src/assets/demo/cold.png?raw=true)
-![](src/assets/demo/warm.png?raw=true)
+<img src="src/assets/demo/cold.png" width="400" height="550"/>
+<img src="src/assets/demo/warm.png" width="400" height="550"/>
 
 ## Project setup
 
