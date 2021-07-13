@@ -2,6 +2,9 @@
 
 Weather app in Vue
 
+![](src/assets/demo/cold.png?raw=true)
+![](src/assets/demo/warm.png?raw=true)
+
 ## Project setup
 
 ```
