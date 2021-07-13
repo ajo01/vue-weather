@@ -9,12 +9,12 @@
         <div class="location">
           Northampton, UK
         </div>
-        <div class="date"> Monday 20 January 2021</div>
+        <div class="date"> {{dateBuilder()}}</div>
       </div>
 
       <div class="weather-box"> 
-        <div class="temp">9°C</div>
-        <div class="weather">Rain</div>
+        <div class="temp">{{Math.round(weather.main.temp)}}°C</div>
+        <div class="weather">{{weather.weather[0].main}}</div>
       </div>
     </div>
   </main>
@@ -41,6 +41,16 @@ export default {
     },
     setResults(results){
       this.weather=results
+    },
+    dateBuilder(){
+      let d = new Date();
+      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let day = days[d.getDay()];
+      let date = d.getDate();
+      let month = months[d.getMonth()];
+      let year = d.getFullYear();
+      return `${day} ${date} ${month} ${year}`;
     }
   }
 };
