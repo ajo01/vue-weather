@@ -1,7 +1,6 @@
-cd vue-weather
-npm run serve
-
 # vue-weather
+
+Weather app in Vue
 
 ## Project setup
 
