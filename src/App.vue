@@ -4,7 +4,7 @@
     <div class="search-box">
       <input type="text" name="" id="" class="search-bar" placeholder="Search" v-model="query" @keypress.enter="fetchWeather">
     </div>
-    <div class="weather-wrap">
+     <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
       <div class="location-box">
         <div class="location">
           Northampton, UK
@@ -27,15 +27,16 @@ export default {
   data() {
     return {
       api_key: "92bb94446ae83a4d0612357549eb65c9",
-      url_base:'https://home.openweathermap.org/data/2.5/',
+      url_base:'https://api.openweathermap.org/data/2.5/',
       query:'',
       weather:{},
     };
   },
   methods:{
-    fetchWeather(e){
+    fetchWeather(){
       fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`).then(
-        res=>{res.json()}
+        res=>{
+          return res.json()}
       ).then(this.setResults)
     },
     setResults(results){
